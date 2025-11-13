@@ -1,13 +1,24 @@
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#     "bioontologies",
+#     "click",
+#     "funowl",
+#     "rdflib",
+#     "requests",
+# ]
+# ///
+
 """Create a slim OWL of ORCID."""
 
 import datetime
 import itertools as itt
 import json
 import logging
-import os
 import time
 from pathlib import Path
 from typing import Iterable
+from bioontologies import robot
 
 import click
 import requests
@@ -26,6 +37,7 @@ logger = logging.getLogger(__name__)
 
 HERE = Path(__file__).parent.resolve()
 OFN_PATH = HERE.joinpath("orcidio.ofn")
+OWL_PATH = HERE.joinpath("orcidio.owl")
 ORCIDS_PATH = HERE.joinpath("extra_orcids.txt")
 ORCID = Namespace("https://orcid.org/")
 URI = "https://w3id.org/orcidio/orcidio.owl"
@@ -158,9 +170,7 @@ def main():
     click.echo(f"writing to {OFN_PATH}")
     OFN_PATH.write_text(f"{doc}\n")
 
-    cmd = "robot convert --input orcidio.ofn --output orcidio.owl"
-    click.secho(cmd, fg="green")
-    os.system(cmd)
+    robot.convert(OFN_PATH, OWL_PATH)
 
 
 if __name__ == "__main__":

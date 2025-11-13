@@ -40,8 +40,7 @@ in the OBO Academy.
 After installing [`robot`](https://robot.obolibrary.org), you can run the following:
 
 ```shell
-pip install tox
-tox
+$ uv run build.py
 ```
 
 This is run automatically once per week via GitHub

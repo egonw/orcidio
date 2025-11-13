@@ -1,8 +1,8 @@
-Prefix( xml: = <http://www.w3.org/XML/1998/namespace> )
+Prefix( owl: = <http://www.w3.org/2002/07/owl#> )
 Prefix( rdf: = <http://www.w3.org/1999/02/22-rdf-syntax-ns#> )
 Prefix( rdfs: = <http://www.w3.org/2000/01/rdf-schema#> )
 Prefix( xsd: = <http://www.w3.org/2001/XMLSchema#> )
-Prefix( owl: = <http://www.w3.org/2002/07/owl#> )
+Prefix( xml: = <http://www.w3.org/XML/1998/namespace> )
 Prefix( orcid: = <https://orcid.org/> )
 Prefix( wikidata: = <http://www.wikidata.org/entity/> )
 Prefix( obo: = <http://purl.obolibrary.org/obo/> )
@@ -13,7 +13,7 @@ Ontology( <https://w3id.org/orcidio/orcidio.owl>
     Annotation( dcterms:creator orcid:0000-0003-4423-4370 )
     Annotation( dcterms:license <https://creativecommons.org/publicdomain/zero/1.0/> )
     Annotation( rdfs:seeAlso <https://github.com/cthoyt/orcidio> )
-    Annotation( owl:versionInfo "2025-11-09" )
+    Annotation( owl:versionInfo "2025-11-13" )
     AnnotationAssertion( rdfs:label obo:NCBITaxon_9606 "Homo sapiens" )
     AnnotationAssertion(
         Annotation( dcterms:source wikidata:Q123250317 )
@@ -4751,6 +4751,15 @@ Ontology( <https://w3id.org/orcidio/orcidio.owl>
         dcterms:description orcid:0000-0002-1296-2528 "postdoctoral fellow"
     )
     AnnotationAssertion(
+        Annotation( dcterms:source wikidata:Q28194918 )
+        rdfs:label orcid:0000-0002-5959-6190 "Evan E. Bolton"
+    )
+    ClassAssertion( obo:NCBITaxon_9606 orcid:0000-0002-5959-6190 )
+    AnnotationAssertion(
+        Annotation( dcterms:source wikidata:Q28194918 )
+        dcterms:description orcid:0000-0002-5959-6190 "chemist working at the NCBI"
+    )
+    AnnotationAssertion(
         Annotation( dcterms:source wikidata:Q106806285 )
         rdfs:label orcid:0000-0003-1307-2508 "Amelia L. Hoyt"
     )
@@ -5287,5 +5296,6 @@ Ontology( <https://w3id.org/orcidio/orcidio.owl>
     Declaration( NamedIndividual( orcid:0009-0009-9147-3105 ) )
     Declaration( NamedIndividual( orcid:0000-0001-6677-8489 ) )
     Declaration( NamedIndividual( orcid:0000-0002-1296-2528 ) )
+    Declaration( NamedIndividual( orcid:0000-0002-5959-6190 ) )
     Declaration( NamedIndividual( orcid:0000-0003-1307-2508 ) )
 )
